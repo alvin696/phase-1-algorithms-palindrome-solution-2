@@ -1,5 +1,16 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  // Remove non-alphanumeric characters and convert to lowercase
+  const cleanWord = word.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+  
+  // Check if the cleaned word is a palindrome
+  const length = cleanWord.length;
+  for (let i = 0; i < Math.floor(length / 2); i++) {
+    if (cleanWord[i] !== cleanWord[length - 1 - i]) {
+      return false;
+    }
+  }
+  
+  return true;
 }
 
 /* 
